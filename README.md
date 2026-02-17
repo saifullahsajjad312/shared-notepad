@@ -57,6 +57,16 @@ Make sure you have Docker and Docker Compose installed, then run this from the p
 docker compose up --build
 ```
 
+> **Permission denied on Docker socket? (Linux only)**
+> Run both commands in order:
+> ```bash
+> sudo usermod -aG docker $USER
+> newgrp docker
+> ```
+> Then re-run `docker compose up --build`.
+>
+> **On macOS / Windows:** Make sure **Docker Desktop** is running before executing the command. Docker Desktop handles permissions automatically on those platforms.
+
 - Frontend: http://localhost:3000
 - Backend API: http://localhost:8000
 - API Docs (Swagger): http://localhost:8000/docs
